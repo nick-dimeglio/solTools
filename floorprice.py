@@ -40,7 +40,7 @@ def floor():
                 # If the function returns a string, it means the collection doesn't exist on Magic Eden or ME API is down, and the user should be shown the error.
                 if isinstance(check_floor, float):
                     print(
-                        f'The floor price of {line} is currently {check_floor} ◎')
+                        f'The floor price of {line} is currently {check_floor} SOL')
                 else:
                     print(check_floor)
             file.close()
@@ -48,9 +48,12 @@ def floor():
         elif check_floor_price_history == "n":
             os.remove("floorprice.txt")
             floor()
+
+        # If the user enters anything else, the user should be shown the error message and the function should be run again.
         else:
             print("Invalid input. Please input either 'y' or 'n'.")
             floor()
+
     # If the file does not exist, or if they just deleted the file from the previous section, ask the user for comma separated collections they want to search.
     # Then, split the string by commas, and run the floorprice_check function on each individual line/collection.
     # However, to make a sort of cache, a file will be opened/created, and each individual collection will be written to the file via the same for loop separated by lines.
