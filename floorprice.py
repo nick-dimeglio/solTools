@@ -1,9 +1,21 @@
 import requests
 import os
 from genericpath import exists
+import time
+
+# This function will be called below in floorprice_check to log the floor price and its timestamp
+# to a separate file that will be accessed in pricehistory.py each time that you check the floorprice
+# of a collection.
+
+def floorprice_logger(collection, floorprice):
+    file = open("floorprice_log.txt", "a")
+    file.write(collection)
+    file.write(" " + str(floorprice) + " " + str(int(time.time())))
+    file.write("\n")
+    file.close()
+
 
 # Defining a function to check the floor price of a collection.
-
 
 def floorprice_check(collection):
     # define the url for the stats page of a collection using the Magic Eden API.
@@ -12,15 +24,18 @@ def floorprice_check(collection):
     response = requests.get(url)
     # Check if the collection is valid by seeing if there is a floorprice in the response.
     # If there is, grab the floor price from the response, divide it by 10^9 (to get the price in full SOL), and return it.
+    # Also run the floorprice_logger function as stated above.
     if 'floorPrice' in response.json():
         floorprice = response.json()['floorPrice']
         floorprice = floorprice / 1000000000
+        floorprice_logger(collection, floorprice)
+
         return(floorprice)
     else:
         return(f"No floor price found. {collection} likely doesn't exist on Magic Eden. If you are positive it does, try again later as Magic Eden may be offline.")
 
-# Main function for using the floorprice tool. Takes the user through dialogue to get the collection name and check the floor price.
 
+# Main function for using the floorprice tool. Takes the user through dialogue to get the collection name and check the floor price.
 
 def floor():
     # Check if there was a previous search (as if there was, a file will be created)

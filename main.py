@@ -1,5 +1,6 @@
 # Importing all the other tools as they are held in separate files for readability.
 import floorprice as fp
+import pricehistory as ph
 
 # This is the main hub for the program. It will show the user the available tools and ask for which tool they would like to use once its run
 # At the moment, the input is run through if else statements, but this will be swapped as grows
@@ -16,6 +17,8 @@ def main():
             break
         elif command == "floorprice":
             fp.floor()
+        elif command == "pricehistory":
+            ph.price_history()
         else:
             print("Invalid command. Please enter one of the available tools.")
 
