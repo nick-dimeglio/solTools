@@ -7,6 +7,7 @@ import time
 # to a separate file that will be accessed in pricehistory.py each time that you check the floorprice
 # of a collection.
 
+
 def floorprice_logger(collection, floorprice):
     file = open("floorprice_log.txt", "a")
     file.write(collection)
@@ -24,11 +25,11 @@ def floorprice_check(collection):
     response = requests.get(url)
     # Check if the collection is valid by seeing if there is a floorprice in the response.
     # If there is, grab the floor price from the response, divide it by 10^9 (to get the price in full SOL), and return it.
-    # Also run the floorprice_logger function as stated above.
+    # Also run the floorprice_logger function as stated above (currently on hold because I want to flesh out the usefulness of this feature).
     if 'floorPrice' in response.json():
         floorprice = response.json()['floorPrice']
         floorprice = floorprice / 1000000000
-        floorprice_logger(collection, floorprice)
+        #floorprice_logger(collection, floorprice)
 
         return(floorprice)
     else:
