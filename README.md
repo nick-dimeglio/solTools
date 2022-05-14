@@ -39,7 +39,7 @@ Download this repo whether its via a zip file or by cloning. If you use the zip 
 Download any libraries used via pip.
 
 Currently required libraries:
--   ### Requests
+-   #### Requests
 
 This can be done via terminal by using the command (without quotations):
 "pip install requests"
