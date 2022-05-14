@@ -6,9 +6,13 @@ Tools for the solana network, at the moment mostly revolving around the Magic Ed
 
 At the moment, the currently usable functions within this build are:
 
--   Floorprice Check:
+-   ### Floorprice Check:
     -   Check as many floor prices separated by commas at once
     -   Automatically save the previous search, so all you don't need to keep entering the same collections.
+-   ### Sales History Check:
+    -   Check the sales history of a collection based on a certain trait.
+    -   Support for every NFT collection available on howrare.is
+    -   Can support up to 120 NFTs within a trait.
 
 # Additions Planned
 
@@ -18,6 +22,7 @@ For the future, I want to add a few features that would help potential buyers a 
 -   Volume Notifications
 -   Discord Bot Integration for constant updates
 -   Firebase/Database integration for centralized data of the collections.
+-   Add staggering to API queries to get around 120 TPM limit of MagicEden.
 
 # How To Use
 
@@ -29,9 +34,18 @@ Be sure to have python installed.
 
 Download this repo whether its via a zip file or by cloning. If you use the zip file, just be sure to extract it to it's own folder.
 
-### Step Three (NOT CURRENTLY NEEDED):
+### Step Three:
 
-Download any libraries used via pip. At the moment, I have disabled extraneous libraries while I work on price history, so this shouldn't be an issue.
+Download any libraries used via pip.
+
+Currently required libraries:
+-   ### Requests
+
+This can be done via terminal by using the command (without quotations):
+"pip install requests"
+
+If you have issues with this, you can use:
+"py -m pip install requests"
 
 ### Step Four:
 
@@ -59,6 +73,12 @@ No matter what you choose, the program should prompt you on how to format inputt
 
 Here's a quick example of it working and the functionality:
 
+Floorprice:
+
 ![image](https://user-images.githubusercontent.com/73611619/168405012-40de21c8-7951-4937-945c-ab3fa3aa1237.png)
+
+SalesHistory:
+
+![image](https://user-images.githubusercontent.com/73611619/168448969-b73ca57e-73de-4ddf-b095-14796c7ea5b6.png)
 
 I hope you find this tool useful in your Solana NFT endeavours!
