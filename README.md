@@ -36,7 +36,8 @@ You are going to need to have a terminal window up, and depending on which you a
 
 ![image](https://user-images.githubusercontent.com/73611619/168404721-ccc52af3-cc1a-40df-ba33-eebf3eeabbd7.png)
 
-- After you've navigated into this folder within your terminal, simply run the command:
+- After you've navigated into this folder within your terminal, simply run the command (without quotations):
+
 "py main.py"
 
 ### Step Five:
