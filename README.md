@@ -34,7 +34,7 @@ You are going to need to have a terminal window up, and depending on which you a
 #### Using CMD prompt or other dedicated terminal:
 - Open CMD prompt or whatever terminal you are using for your operating system, and navigate to the folder that contains the python files. For instance if you have it installed in your C: drive downloads folder, your command prompt should look something like this:
 
-![image](https://user-images.githubusercontent.com/73611619/168404870-6d5e159b-6dff-49d8-ad7a-8d20803bac73.png)
+![image](https://user-images.githubusercontent.com/73611619/168404935-ec02d4c4-b0d1-4719-8364-b32ac49c58bc.png)
 
 - After you've navigated into this folder within your terminal, simply run the command (without quotations):
 
