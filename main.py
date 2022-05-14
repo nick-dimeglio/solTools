@@ -1,5 +1,6 @@
 # Importing all the other tools as they are held in separate files for readability.
 import floorprice as fp
+import salesHistory as sh
 # Not necessary yet to import unused feature
 #import pricehistory as ph
 
@@ -10,7 +11,7 @@ import floorprice as fp
 
 def main():
     print("Welcome to solTools!")
-    print("Available tools: floorprice")
+    print("Available tools: floorprice, saleshistory")
     print("Type 'exit' to quit.")
     while True:
         command = input("Enter command: ")
@@ -18,6 +19,8 @@ def main():
             break
         elif command == "floorprice":
             fp.floor()
+        elif command == "saleshistory":
+            sh.salesHistory()
         # I will add this in the near future, I'd rather there be a constantly updated firebase database for this though. I'll have a use for this soon!
         # elif command == "pricehistory":
             # ph.price_history()
