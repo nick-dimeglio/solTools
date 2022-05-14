@@ -42,9 +42,11 @@ Currently required libraries:
 -   #### Requests
 
 This can be done via terminal by using the command (without quotations):
+
 "pip install requests"
 
 If you have issues with this, you can use:
+
 "py -m pip install requests"
 
 ### Step Four:
