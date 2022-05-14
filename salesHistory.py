@@ -37,6 +37,7 @@ def salesInformation(collection):
     response = requests.get(url).json()
     # Filtering json to just get the items in the collection.
     validityCheck = response['result']
+    # Ensure a valid 200 response was received from the API.
     if validityCheck['api_code'] == 200:
         fullList = response['result']['data']['items']
         # Looping through all the individual NFTs in the collection and each of their attributes to check for all possible attributes and adding them to the value array.
@@ -65,6 +66,7 @@ def salesInformation(collection):
                         # Once all the matches are found, send them to the saleCheck function to have their recent sale information checked.
         print("NFT Tokens found. Finding recent sales history of all tokens. This may take a while depending on how many tokens grabbed and how steady MagicEden is at the moment...")
         saleCheck(desiredTokens)
+    # Anything besides a 200 response, and tell the user to make sure the collection was valid.
     else:
         print('There was an error grabbing this collection. Please make sure it was spelled correctly and try again.')
         salesHistory()
